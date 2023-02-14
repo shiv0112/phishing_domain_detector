@@ -1,6 +1,7 @@
 dvc
 numpy
 pandas
+scikit-learn==0.21.3
 notebook
 matplotlib
 seaborn
@@ -10,7 +11,8 @@ tqdm
 ensure==1.0.2
 joblib
 types-PyYAML
-scipy
 mlflow==1.26.1
 ipykernel
+imbalanced-learn
+xgboost
 -e .
