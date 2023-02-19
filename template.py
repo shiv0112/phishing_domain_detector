@@ -2,7 +2,7 @@ import logging
 import os
 from pathlib import Path
 
-package_name = "pdd" #phising_domain_detector
+package_name = "phising_domain_detector" #phising_domain_detector
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s: ')
 
