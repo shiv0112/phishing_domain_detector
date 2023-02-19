@@ -1,1 +1,3 @@
 from phishing_domain_detector.component.data_ingestion import DataIngestion
+from phishing_domain_detector.component.data_validation import DataValidation
+from phishing_domain_detector.component.data_transformation import DataTransformation

@@ -6,15 +6,29 @@ data_ingestion:
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 
-prepare_base_model:
-  root_dir: artifacts/prepare_base_model
-  base_model_path: artifacts/prepare_base_model/base_model.h5
-  updated_base_model_path: artifacts/prepare_base_model/base_model_updated.h5
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dir: artifacts/data_ingestion
+  train_file_name: dataset_full.csv
+  test_file_name: dataset_small.csv 
+  report_file_path: report.json
+  report_page_file_path: report.html
 
-prepare_callbacks:
-  root_dir: artifacts/prepare_callbacks
-  tensorboard_root_log_dir: artifacts/prepare_callbacks/tensorboard_log_dir
-  checkpoint_model_filepath: artifacts/prepare_callbacks/checkpoint_dir/model.h5
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_dir: artifacts/data_ingestion
+  train_file_name: dataset_full.csv
+  test_file_name: dataset_small.csv
+  train_trans: train.csv
+  test_trans: test.csv
+
+model_trainer_config:
+  trained_model_dir: trained_model
+  model_file_name: model.pkl
+  base_accuracy: 0.9
+  model_config_dir: config
+  model_config_file_path: configs/model.yaml
+
 
 training:
   root_dir: artifacts/training
