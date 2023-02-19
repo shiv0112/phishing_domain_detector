@@ -13,6 +13,7 @@ joblib
 types-PyYAML
 mlflow==1.26.1
 ipykernel
+xgboost
 imbalanced-learn
 xgboost
 -e .
