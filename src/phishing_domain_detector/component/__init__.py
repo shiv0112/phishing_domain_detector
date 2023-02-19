@@ -1,0 +1,1 @@
+from phishing_domain_detector.component.data_ingestion import DataIngestion
