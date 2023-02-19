@@ -4,7 +4,6 @@ from zipfile import ZipFile
 from phishing_domain_detector.entity import DataIngestionConfig
 from phishing_domain_detector import logger
 from phishing_domain_detector.utils import get_size
-from tqdm import tqdm
 from pathlib import Path
 
 class DataIngestion:
