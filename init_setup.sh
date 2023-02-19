@@ -6,5 +6,5 @@ source activate ppd
 echo [$(date)]: "Installing the dev env"
 pip install -r requirements.txt
 echo [$(date)]: "Installing prediction env"
-pip install -r prediction_service/requirements_dev.txt
+#pip install -r prediction_service/requirements_dev.txt
 echo [$(date)]: "END"
