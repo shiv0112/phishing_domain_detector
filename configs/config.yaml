@@ -22,14 +22,10 @@ data_transformation:
   train_trans: train.csv
   test_trans: test.csv
 
-model_trainer_config:
+model_trainer:
   trained_model_dir: trained_model
-  model_file_name: model.pkl
-  base_accuracy: 0.9
-  model_config_dir: config
-  model_config_file_path: configs/model.yaml
-
-
-training:
-  root_dir: artifacts/training
-  trained_model_path: artifacts/training/model.h5
+  data_dir: artifacts/data_transformation
+  train_file: train.csv
+  test_file: test.csv
+  model_file_name: model.joblib
+  best_model_name: best_model.joblib

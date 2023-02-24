@@ -31,7 +31,7 @@ class DataTransformation:
 
         logger.info("Selecting features using AdaBoost Classifier..")
         
-        estimator = AdaBoostClassifier(random_state=self.config.rand_state, n_estimators=50)
+        estimator = AdaBoostClassifier(random_state=0, n_estimators=50)
         selector = SelectFromModel(estimator)
         selector = selector.fit(X_train, y_train) 
         features = np.array(X_train.columns)
@@ -41,6 +41,8 @@ class DataTransformation:
 
         X_train=X_train[features[status]]
         X_test=X_test[features[status]]
+
+        logger.info(features[status])
 
         train_df = pd.concat([X_train, y_train],axis=1)
         test_df = pd.concat([X_test, y_test],axis=1)

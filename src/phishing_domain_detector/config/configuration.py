@@ -5,7 +5,8 @@ from phishing_domain_detector.utils import read_yaml, create_directories
 from phishing_domain_detector.entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 
 class ConfigurationManager:
@@ -56,8 +57,26 @@ class ConfigurationManager:
             train_file_name = config.train_file_name,
             test_file_name = config.test_file_name,
             train_trans = config.train_trans,
-            test_trans = config.test_trans,
-            rand_state = self.params.RANDOM_STATE
+            test_trans = config.test_trans
         )
 
         return data_transformation_config
+
+    def get_model_trainer_config(self):
+        config =self.config.model_trainer
+        
+        create_directories([config.trained_model_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            trained_model_dir = config.trained_model_dir,
+            data_dir= config.data_dir,
+            train_file= config.train_file,
+            test_file= config.test_file,
+            model_file_name= config.model_file_name,
+            best_model_name= config.best_model_name,
+            rand_state = self.params.RANDOM_STATE
+        )
+
+        return model_trainer_config
+
+    
