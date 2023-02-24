@@ -1,7 +1,7 @@
 dvc
 numpy
 pandas
-scikit-learn==0.21.3
+scikit-learn
 notebook
 matplotlib
 seaborn
@@ -15,5 +15,7 @@ mlflow==1.26.1
 ipykernel
 xgboost
 imbalanced-learn
+scikit-learn
 xgboost
+evidently
 -e .

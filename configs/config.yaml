@@ -1,0 +1,31 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://prod-dcd-datasets-cache-zipfiles.s3.eu-west-1.amazonaws.com/72ptz43s9v-1.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+data_validation:
+  root_dir: artifacts/data_validation
+  data_dir: artifacts/data_ingestion
+  train_file_name: dataset_full.csv
+  test_file_name: dataset_small.csv 
+  report_file_path: report.json
+  report_page_file_path: report.html
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_dir: artifacts/data_ingestion
+  train_file_name: dataset_full.csv
+  test_file_name: dataset_small.csv
+  train_trans: train.csv
+  test_trans: test.csv
+
+model_trainer:
+  trained_model_dir: trained_model
+  data_dir: artifacts/data_transformation
+  train_file: train.csv
+  test_file: test.csv
+  model_file_name: model.joblib
+  best_model_name: best_model.joblib
