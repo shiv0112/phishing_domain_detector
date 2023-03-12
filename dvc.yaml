@@ -1,0 +1,39 @@
+stages:
+  data_ingestion:
+    cmd: python src\phishing_domain_detector\pipeline\stage01_data_ingestion.py
+    deps:
+      - src\phishing_domain_detector\pipeline\stage01_data_ingestion.py
+      - configs\config.yaml
+    outs:
+      - artifacts\data_ingestion
+
+  data_validation:
+    cmd: python src\phishing_domain_detector\pipeline\stage02_data_validation.py
+    deps:
+      - src\phishing_domain_detector\pipeline\stage01_data_ingestion.py
+      - src\phishing_domain_detector\pipeline\stage02_data_validation.py
+      - configs\config.yaml
+      - configs\schema.yaml
+    outs:
+      - artifacts\data_validation
+  
+  data_transformation:
+    cmd: python src\phishing_domain_detector\pipeline\stage03_data_transformation.py
+    deps:
+      - src\phishing_domain_detector\pipeline\stage02_data_validation.py
+      - src\phishing_domain_detector\pipeline\stage03_data_transformation.py
+      - configs\config.yaml
+      - configs\schema.yaml
+    outs:
+      - artifacts\data_transformation
+  
+  model_trainer:
+    cmd: python src\phishing_domain_detector\pipeline\stage04_model_trainer.py
+    deps:
+      - src\phishing_domain_detector\pipeline\stage03_data_transformation.py
+      - src\phishing_domain_detector\pipeline\stage04_model_trainer.py
+      - configs\config.yaml
+      - configs\schema.yaml
+      - params.yaml
+    outs:
+      - trained_model

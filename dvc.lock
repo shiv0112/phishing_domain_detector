@@ -1,0 +1,36 @@
+schema: '2.0'
+stages:
+  data_transformation:
+    cmd: python src\phishing_domain_detector\pipeline\stage03_data_transformation.py
+    deps:
+    - path: configs\config.yaml
+      md5: bb5681709842b02c0d384404985cd746
+      size: 965
+    - path: configs\schema.yaml
+      md5: 1927ae730b88916dbf28cd21c7f5a378
+      size: 2995
+    - path: src\phishing_domain_detector\pipeline\stage02_data_validation.py
+      md5: 2a833c5dd1695f6bff44aca5513fc4db
+      size: 854
+    - path: src\phishing_domain_detector\pipeline\stage03_data_transformation.py
+      md5: 0a1789d322a4a048ddfdb5ebdd7aa615
+      size: 732
+    outs:
+    - path: artifacts\data_transformation
+      md5: 1c9d48754286e1d04f3eb8fe7667f30a.dir
+      size: 11141910
+      nfiles: 2
+  data_ingestion:
+    cmd: python src\phishing_domain_detector\pipeline\stage01_data_ingestion.py
+    deps:
+    - path: configs\config.yaml
+      md5: bb5681709842b02c0d384404985cd746
+      size: 965
+    - path: src\phishing_domain_detector\pipeline\stage01_data_ingestion.py
+      md5: 6f68cccc6e6afc5a217e0164a1f5ff89
+      size: 730
+    outs:
+    - path: artifacts\data_ingestion
+      md5: 5201469e18d5a89d5e55d0e525d1f2ae.dir
+      size: 45592957
+      nfiles: 3
