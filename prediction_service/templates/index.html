@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phising Detector</title>
+    <title>Phishing Detector</title>
 
     <!--Link for Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="title navbar-brand" href="#">Domain Phising</a>
+        <a class="title navbar-brand" href="#">Domain Phishing</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -70,27 +70,158 @@
 
     <!--Home section-->
     <section id="home" class="home-section">
-      <h1 class="landing-text">Hello .</h1>
-      <form method="post" action="#" class="search-box">
-        <input
-          class="search"
-          type="text"
-          name="input"
-          placeholder="Enter the URL "
-        />
-        <input class="button" type="submit" value="Check" />
-      </form>
-      <p class="result">The result will display here</p>
+      <div class="container">
+        <h1 class="landing-text">Hello Phish.</h1>
+        <form method="post" action="/predict" class="search-box">
+          <input
+            class="search"
+            type="text"
+            name="input"
+            placeholder="Enter the URL "
+          />
+          <input class="button" type="submit" value="Check" />
+        </form>
+        <p class="result">{{result}}</p>
+      </div>
     </section>
 
     <!--Why we are the best-->
     <section id="features">
-      <h1>Features Section</h1>
+      <div class="features-container">
+        <div class="features-intro">
+          <h2>Might be wondering WHY?</h2>
+          <p>Our insights will tell you why</p>
+        </div>
+        <div class="features-content">
+          <div class="content">
+            <p>
+              The Internet has become crucial to our daily lives, but it also presents opportunities for malicious activities like Phishing, which can be done anonymously. Phishers deceive their victims through social engineering or fake websites in order to steal important information like usernames and passwords from individuals and organizations. While many techniques have been suggested to identify phishing sites, phishers have adapted their methods to avoid detection. However, Machine Learning has proven to be an effective approach to identifying these harmful activities. This is because most Phishing attacks share similar characteristics, which can be recognized through machine learning techniques.
+            </p>
+            <p>
+              Our team has developed a state-of-the-art solution utilizing cutting-edge Machine Learning techniques, particularly the Random Forest algorithm, which has demonstrated unparalleled accuracy in detecting phishing attacks. Our solution has been rigorously tested and has achieved an impressive accuracy rate of 98%.
+            </p>
+          </div>
+          <div
+            id="carouselExampleCaptions"
+            class="carousel slide myeffects"
+            data-bs-ride="carousel"
+          >
+            <!-- <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div> -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="{{ url_for('static', filename='The Roc Curve.png') }}"
+                  class="d-block w-100"
+                  alt="The ROC Curve"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="{{ url_for('static', filename='The confusion matrix.png') }}"
+                  class="d-block w-100"
+                  alt="The confusion matrix"
+                />
+              </div>
+              <div class="carousel-item">
+                <img src="{{ url_for('static', filename='3.jpg') }}" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>
+                    Some representative placeholder content for the third slide.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{{ url_for('static', filename='4.jpg') }}" class="d-block w-100" alt="..." />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Forth slide label</h5>
+                  <p>
+                    Some representative placeholder content for the third slide.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!--Data Report-->
     <section id="report">
-      <h1>Data Report Section</h1>
+      <div class="report-container">
+        <div class="intro-report">
+          <h3>
+            Dataset for phishing websites detection
+          </h3>
+          <p>
+            Phishing stands for a fraudulent process,
+            where an attacker tries to obtain sensitive information from the victim. 
+            Usually, these kinds of attacks are done via emails, text messages, or websites. Phishing websites, 
+            which are nowadays in a considerable rise, have the same look as legitimate sites. However, 
+            their backend is designed to collect sensitive information that is inputted by the victim. 
+            Discovering and detecting phishing websites has recently also gained the machine learning community’s attention, 
+            which has built the models and performed classifications of phishing websites. 
+            This paper presents two dataset variations that consist of 58,645 and 88,647 websites labeled as legitimate or phishing and 
+            allow the researchers to train their classification models,
+            build phishing detection systems, and mining association rules.
+          </p>
+          <p>
+            Click to know more about our data report
+            <a href="/report">Click here</a>
+          </p>
+        </div>
+      </div>
     </section>
 
     <!--About Us-->
@@ -99,8 +230,7 @@
       <div class="intro-component">
         <h3>Ask how can we help you.</h3>
         <p>
-          Connect to us with our socials and tell us the problem you are
-          facing.(If any)
+          Connect to us with our socials and tell us the problem you are facing.
         </p>
       </div>
       <div class="about-us">
@@ -138,7 +268,7 @@
           <div class="intro">
             <h3>Shivansh Srivastava</h3>
             <p>Data Scientist</p>
-            <p>email</p>
+            <p>srivastavashiv0112@gmail.com</p>
             <a href="https://www.linkedin.com/in/srivastava-shivansh/"
               ><img class="social" src="../static/linkedin.png" alt="linkedin"
             /></a>
@@ -160,7 +290,7 @@
           <div class="intro">
             <h3>Rishabh .</h3>
             <p>Data Scientist</p>
-            <p>email</p>
+            <p>rbrishabh76@gmail.com</p>
             <a href="https://www.linkedin.com/in/rishabh-465a85185/"
               ><img class="social" src="../static/linkedin.png" alt="linkedin"
             /></a>
