@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import numpy as np
 import warnings
 import pickle
@@ -32,15 +32,19 @@ def index():
         y_pro_non_phishing = model.predict_proba(x)[0,1]
        
         if y_pred == 1:
-            result = f"The site {y_pred} {url} is {round(y_pro_non_phishing,2)*100}% safe"
+            result = f"The site {url} is {round(y_pro_non_phishing,2)*100} % safe ✅"
         else:
-            result = f"The site {y_pred} {url} is {round(y_pro_phishing,2)*100}% unsafe"
+            result = f"The site {url} is {round(y_pro_phishing,2)*100} % unsafe ❌"
         return render_template('index.html',result = result)
     return render_template("index.html")
 
 @app.route('/report')
 def report():
-    return render_template('report.html')
+    return render_template('index.html')
+
+@app.route('/data')
+def data():
+    return redirect('https://www.sciencedirect.com/science/article/pii/S2352340920313202')
 
 if __name__ == '__main__':
     app.run(debug=True)
