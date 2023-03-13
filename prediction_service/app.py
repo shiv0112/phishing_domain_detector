@@ -32,15 +32,15 @@ def index():
         y_pro_non_phishing = model.predict_proba(x)[0,1]
        
         if y_pred == 1:
-            result = f"The site {url} is {round(y_pro_non_phishing,2)*100} % safe ✅"
+            result = f"  The site is {round(y_pro_non_phishing,2)*100} % safe ✅"
         else:
-            result = f"The site {url} is {round(y_pro_phishing,2)*100} % unsafe ❌"
+            result = f"The site is {round(y_pro_phishing,2)*100} % unsafe ❌"
         return render_template('index.html',result = result)
     return render_template("index.html")
 
-@app.route('/report')
-def report():
-    return render_template('index.html')
+#@app.route('/report')
+#def report():
+#    return render_template('index.html')
 
 @app.route('/data')
 def data():
