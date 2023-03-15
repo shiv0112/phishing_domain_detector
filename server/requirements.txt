@@ -6,7 +6,6 @@ seaborn
 gunicorn
 Flask
 whois
-xgboost
 imbalanced-learn
 googlesearch_python==1.0.1
 ipaddress
