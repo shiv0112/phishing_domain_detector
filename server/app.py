@@ -5,7 +5,7 @@ import pickle
 warnings.filterwarnings('ignore')
 from feature import FeatureExtraction
 
-file = open("prediction_service/model.pkl","rb")
+file = open("server/model.pkl","rb")
 model = pickle.load(file)
 file.close()
 
