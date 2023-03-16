@@ -4,6 +4,8 @@ Project Description 📄
 
 ❄️ To predict whether the domains are real or malicious.
 
+##### Deployed Website: (https://phishing-detector-rqld.onrender.com/)
+
 ##### Jupyter Notebook: (https://github.com/shiv0112/phishing_domain_detector/blob/main/research/model.ipynb)
 
 ## Data:
