@@ -52,6 +52,10 @@ I trained this model using Random Forest:
 
 ![Alt text](https://github.com/shiv0112/phising_domain_detector/raw/main/screenshots/plot.png)
 
+## Demo Video:
+
+![Alt text](https://github.com/shiv0112/phising_domain_detector/raw/main/screenshots/demo.gif)
+
 ### Index page of Website:
 
 ![Alt text](https://github.com/shiv0112/phising_domain_detector/raw/main/screenshots/1.png)
