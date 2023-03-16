@@ -64,3 +64,10 @@ I trained this model using Random Forest:
 
 ![Alt text](https://github.com/shiv0112/phising_domain_detector/raw/main/screenshots/3.png)
 
+```bash
+Author's
+Rishabh: rbrishabh76@gmail.com
+Shivansh Srivastava: srivastavashiv0112@gmail.com
+Ashish Diwakar: ashishdiwakar223@gmail.com
+```
+
