@@ -71,12 +71,12 @@ I trained this model using Random Forest:
 Authors
 ```
 ```
-Rishabh: rbrishabh76@gmail.com
+Rishabh
 ```
 ```
-Shivansh Srivastava: srivastavashiv0112@gmail.com
+Shivansh Srivastava
 ```
 ```
-Ashish Diwakar: ashishdiwakar223@gmail.com
+Ashish Diwakar
 ```
 
